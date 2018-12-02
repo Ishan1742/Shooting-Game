@@ -74,8 +74,12 @@ int main()
 				activeChars[i]->updateProjectiles(activeChars);
 			}
 		}
-		drawRechargeRect();
-    drawHealthRect(p);
+		if(p->checkLife() == 1)
+		{
+			drawRechargeRect();
+			drawHealthRect(p);
+		}
+		
 		delay = checkDelay(&start);
 	}
 	return 0;
